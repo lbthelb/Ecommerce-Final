@@ -9,7 +9,7 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 class App extends React.Component {
   constructor(){
-    super()
+    super();
 
     this.state= {
       currentUser: null
@@ -29,18 +29,18 @@ class App extends React.Component {
               id: snapShot.id,
               ...snapShot.data()
             }
-          })
+          });
         });
         console.log(this.state);
-      } else (
+      } 
         this.setState({currentUser: userAuth})
-      )
+      
     });
-  }
+  };
 
   componentWillUnmount() {
     this.unsubscribeFromAuth();
-  }
+  };
 
 
   render() {
@@ -56,7 +56,7 @@ class App extends React.Component {
     </div>
   );
 
-}
-}
+};
+};
 
 export default App;

@@ -13,6 +13,8 @@ const config = {
     measurementId: "G-YLB198K8HW"
   };
 
+  firebase.initializeApp(config); 
+
   export const createUserProfileDocument= async (userAuth, additionalData) => {
       if (!userAuth) return;
       
@@ -29,7 +31,7 @@ const config = {
                     email,
                     createdAt,
                     ...additionalData
-                })
+                });
           } catch(error){
                 console.log('error creating user', error.message);
           }
@@ -37,7 +39,7 @@ const config = {
       return userRef;
   };
 
-  firebase.initializeApp(config); 
+ 
 
   export const auth = firebase.auth();
   export const firestore = firebase.firestore(); 
