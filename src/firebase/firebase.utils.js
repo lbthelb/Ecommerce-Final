@@ -32,6 +32,7 @@ const config = {
                     createdAt,
                     ...additionalData
                 });
+                
           } catch(error){
                 console.log('error creating user', error.message);
           }
